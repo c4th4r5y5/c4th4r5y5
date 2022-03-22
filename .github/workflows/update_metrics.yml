@@ -13,3 +13,9 @@ jobs:
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
+          
+           # Options
+          user: c4th4r5y5
+          template: classic
+          base: header, activity, community, repositories, metadata
+          config_timezone: America/Montreal
