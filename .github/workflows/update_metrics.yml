@@ -13,7 +13,13 @@ jobs:
       - uses: Platane/snk@v1.1.0
         with:
           github_user_name: ${{ github.repository_owner }}
-          gif_out_path: ../github-snake.gif
+          gif_out_path: dist/github-snake.gif
+      - uses: crazy-max/ghaction-github-pages@v2.6.0
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
